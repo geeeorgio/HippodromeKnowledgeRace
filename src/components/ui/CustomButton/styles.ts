@@ -10,25 +10,36 @@ export const styles = StyleSheet.create({
     borderRadius: wp(12),
   },
   btnPressed: {
-    opacity: 0.8,
+    opacity: 0.7,
   },
   btnDisabled: {
     backgroundColor: COLORS.rgbaPurpleBtn,
+    borderRadius: wp(12),
   },
-  white: {
-    backgroundColor: COLORS.white,
+  blue: {
+    backgroundColor: COLORS.purpleBtn,
     borderColor: COLORS.borderColor,
     borderWidth: wp(1),
+    borderRadius: wp(12),
+  },
+  white: {
+    backgroundColor: COLORS.purpleContainer,
+    borderColor: COLORS.white,
+    borderWidth: wp(1),
+    borderRadius: wp(12),
   },
   purple: {
     backgroundColor: COLORS.purpleContainer,
     borderColor: COLORS.borderColor,
     borderWidth: wp(1),
+    borderRadius: wp(12),
   },
   green: {
     backgroundColor: COLORS.green,
+    borderRadius: wp(12),
   },
   red: {
     backgroundColor: COLORS.red,
+    borderRadius: wp(12),
   },
 });

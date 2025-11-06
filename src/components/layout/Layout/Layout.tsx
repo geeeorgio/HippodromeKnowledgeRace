@@ -17,6 +17,8 @@ const Layout = ({ children }: LayoutProps) => {
       resizeMode="cover"
       style={styles.image}
     >
+      <View style={styles.overlay} />
+
       <View style={styles.container}>{children}</View>
     </ImageBackground>
   );

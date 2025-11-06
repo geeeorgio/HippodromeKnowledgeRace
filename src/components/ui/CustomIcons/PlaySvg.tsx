@@ -1,6 +1,6 @@
 import React from 'react';
 import type { SvgProps } from 'react-native-svg';
-import Svg, { Mask, Path } from 'react-native-svg';
+import Svg, { G, Mask, Path } from 'react-native-svg';
 
 const PlaySvg = (props: SvgProps) => {
   return (
@@ -29,9 +29,9 @@ const PlaySvg = (props: SvgProps) => {
           d="M10 12.167V8.414l3.25 1.876 3.25 1.877-3.25 1.876L10 15.919z"
         ></Path>
       </Mask>
-      <g mask="url(#mask0_2002_415)">
+      <G mask="url(#mask0_2002_415)">
         <Path fill={props.color || '#fff'} d="M-.833-.833h26v26h-26z"></Path>
-      </g>
+      </G>
     </Svg>
   );
 };

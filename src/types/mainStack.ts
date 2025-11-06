@@ -1,5 +1,7 @@
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
+import type { HistoryPlace } from 'src/constants';
+
 export type MainStackParamsList = {
   HomeScreen: undefined;
   ArticlesScreen: undefined;
@@ -8,6 +10,7 @@ export type MainStackParamsList = {
   AchievementsScreen: undefined;
   SettingsScreen: undefined;
   VictoryScreen: undefined;
+  DetailsScreen: { article: HistoryPlace };
 };
 
 export type MainStackNavigationProp = NativeStackNavigationProp<

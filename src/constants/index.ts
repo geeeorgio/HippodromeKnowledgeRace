@@ -4,3 +4,4 @@ export * from './fonts';
 export * from './images';
 export * from './places';
 export * from './quiz';
+export * from './achievements';

@@ -4,9 +4,6 @@ import { FONTS } from 'src/constants';
 import { hp, sp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   wrapper: {
     flex: 1,
     paddingHorizontal: wp(60),

@@ -1,9 +1,14 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { CustomHeader } from 'src/components/ui';
+import { useAppSelector } from 'src/hooks/toolkit';
+import { selectFavoriteArticles } from 'src/redux/slices/articles/selectors';
 import {
   AchievementsScreen,
   ArticlesScreen,
+  DetailsScreen,
   FavouritesScreen,
   HomeScreen,
   QuizScreen,
@@ -15,30 +20,66 @@ import type { MainStackParamsList } from 'src/types/mainStack';
 const Main = createNativeStackNavigator<MainStackParamsList>();
 
 const MainNavigator = () => {
+  const favoriteArticles = useAppSelector(selectFavoriteArticles);
+
+  const showSortOption = favoriteArticles && favoriteArticles?.length > 0;
+
   return (
-    <Main.Navigator
-      screenOptions={{
-        headerShown: false,
-        contentStyle: { backgroundColor: 'transparent' },
-        gestureEnabled: false,
-        animation: 'slide_from_right',
-      }}
-    >
-      <Main.Screen name={'HomeScreen'} component={HomeScreen} />
-      <Main.Screen name={'ArticlesScreen'} component={ArticlesScreen} />
-      <Main.Screen name={'QuizScreen'} component={QuizScreen} />
-      <Main.Screen name={'FavouritesScreen'} component={FavouritesScreen} />
-      <Main.Screen name={'AchievementsScreen'} component={AchievementsScreen} />
-      <Main.Screen name={'SettingsScreen'} component={SettingsScreen} />
-      <Main.Screen
-        options={{
-          presentation: 'transparentModal',
+    <SafeAreaView style={{ flex: 1 }}>
+      <Main.Navigator
+        screenOptions={{
+          header: (props) => <CustomHeader {...props} />,
+          contentStyle: { backgroundColor: 'transparent' },
+          gestureEnabled: false,
           animation: 'slide_from_right',
         }}
-        name={'VictoryScreen'}
-        component={VictoryScreen}
-      />
-    </Main.Navigator>
+      >
+        <Main.Screen
+          name={'HomeScreen'}
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Main.Screen
+          name={'ArticlesScreen'}
+          component={ArticlesScreen}
+          options={{ title: 'sort' }}
+        />
+        <Main.Screen
+          name={'QuizScreen'}
+          component={QuizScreen}
+          options={{ title: 'empty' }}
+        />
+        <Main.Screen
+          name={'FavouritesScreen'}
+          component={FavouritesScreen}
+          options={{ title: showSortOption ? 'sort' : 'empty' }}
+        />
+        <Main.Screen
+          name={'AchievementsScreen'}
+          component={AchievementsScreen}
+          options={{ title: 'Achievements' }}
+        />
+        <Main.Screen
+          name={'SettingsScreen'}
+          component={SettingsScreen}
+          options={{ title: 'empty' }}
+        />
+        <Main.Screen
+          options={{
+            headerShown: false,
+            presentation: 'transparentModal',
+            animation: 'fade',
+          }}
+          name={'VictoryScreen'}
+          component={VictoryScreen}
+        />
+        <Main.Screen
+          name={'DetailsScreen'}
+          component={DetailsScreen}
+          options={{ title: 'empty' }}
+        />
+      </Main.Navigator>
+    </SafeAreaView>
   );
 };
 

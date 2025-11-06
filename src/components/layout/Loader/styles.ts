@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 
+import { COLORS } from 'src/constants';
 import { hp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
@@ -30,7 +31,7 @@ export const styles = StyleSheet.create({
     height: wp(40),
     borderRadius: wp(20),
     borderWidth: wp(8),
-    borderColor: '#000',
+    borderColor: COLORS.black,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -40,7 +41,7 @@ export const styles = StyleSheet.create({
     height: wp(40),
     borderRadius: wp(20),
     borderWidth: wp(8),
-    borderColor: '#000',
+    borderColor: COLORS.black,
     opacity: 0.5,
     justifyContent: 'center',
     alignItems: 'center',
@@ -49,7 +50,7 @@ export const styles = StyleSheet.create({
     width: wp(20),
     height: wp(20),
     borderRadius: wp(10),
-    backgroundColor: '#000',
+    backgroundColor: COLORS.black,
     position: 'absolute',
     bottom: -wp(15) * 2.5,
     left: '50%',

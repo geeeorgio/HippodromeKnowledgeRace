@@ -1,20 +1,32 @@
+import AchievementItem from './AchievementItem/AchievementItem';
+import AchievementsList from './AchievementsList/AchievementsList';
 import CustomButton from './CustomButton/CustomButton';
 import CustomContainer from './CustomContainer/CustomContainer';
+import CustomHeader from './CustomHeader/CustomHeader';
 import AzSvg from './CustomIcons/AzSvg';
 import FavouriteSvg from './CustomIcons/FavouriteSvg';
 import PlaySvg from './CustomIcons/PlaySvg';
 import ResetSvg from './CustomIcons/ResetSvg';
 import ShareSvg from './CustomIcons/ShareSvg';
+import SortSvg from './CustomIcons/SortSvg';
 import SoundSvg from './CustomIcons/SoundSvg';
 import StarSvg from './CustomIcons/StarSvg';
 import VibrationSvg from './CustomIcons/VibrationSvg';
 import ZaSvg from './CustomIcons/ZaSvg';
+import CustomScreenWrapper from './CustomScreenWrapper/CustomScreenWrapper';
 import CustomText from './CustomText/CustomText';
+import PlaceDetailsCard from './PlaceDetailsCard/PlaceDetailsCard';
+import PlaceItem from './PlaceItem/PlaceItem';
+import PlacesList from './PlacesList/PlacesList';
 
 export {
+  AchievementItem,
+  AchievementsList,
   CustomButton,
   CustomContainer,
+  CustomHeader,
   CustomText,
+  CustomScreenWrapper,
   ShareSvg,
   FavouriteSvg,
   AzSvg,
@@ -24,4 +36,8 @@ export {
   StarSvg,
   VibrationSvg,
   ZaSvg,
+  PlaceItem,
+  PlacesList,
+  SortSvg,
+  PlaceDetailsCard,
 };

@@ -11,23 +11,49 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 
+import { achievementsReducer } from './slices/achievements/slice';
+import { articlesReducer } from './slices/articles/slice';
+import { filterReducer } from './slices/filter/slice';
 import { loaderReducer } from './slices/loader/slice';
 import { onboardingReducer } from './slices/onboarding/slice';
 
-const persistConfig = {
+const onboardingPersistConfig = {
   key: 'onboarding',
   storage: AsyncStorage,
 };
 
+const articlesPersistConfig = {
+  key: 'articles',
+  storage: AsyncStorage,
+};
+
+const achievementsPersistConfig = {
+  key: 'achievements',
+  storage: AsyncStorage,
+};
+
 const onboardingPersistedReducer = persistReducer(
-  persistConfig,
+  onboardingPersistConfig,
   onboardingReducer,
+);
+
+const articlesPersistedReducer = persistReducer(
+  articlesPersistConfig,
+  articlesReducer,
+);
+
+const achievementsPersistedReducer = persistReducer(
+  achievementsPersistConfig,
+  achievementsReducer,
 );
 
 const store = configureStore({
   reducer: {
     loader: loaderReducer,
     onboarding: onboardingPersistedReducer,
+    articles: articlesPersistedReducer,
+    achievements: achievementsPersistedReducer,
+    filter: filterReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

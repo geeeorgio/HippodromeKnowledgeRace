@@ -6,7 +6,7 @@ export interface QuizOption {
 }
 
 export interface ChariotQuizQuestion {
-  id: number;
+  id: string;
   era: string;
   question: string;
   options: QuizOption[];
@@ -15,7 +15,7 @@ export interface ChariotQuizQuestion {
 
 export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
   {
-    id: 1,
+    id: 'theFirstWheelsWarQuestion',
     era: 'Mesopotamia',
     question: 'What was the earliest known use of the wheel in Mesopotamia?',
     options: [
@@ -26,7 +26,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.TheFirstWheelsWar,
   },
   {
-    id: 2,
+    id: 'chariotsOfTheSunQuestion',
     era: 'Egypt',
     question: 'What made Egyptian chariots stand out from earlier designs?',
     options: [
@@ -37,7 +37,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.ChariotsSun,
   },
   {
-    id: 3,
+    id: 'mastersOfIronAndMotionQuestion',
     era: 'Hittite Empire',
     question: 'Why were Hittite chariots so effective in battle?',
     options: [
@@ -48,7 +48,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.MastersIronMotion,
   },
   {
-    id: 4,
+    id: 'wheelsOfGloryQuestion',
     era: 'Ancient Greece',
     question:
       'Where did chariot racing become a major public event in Ancient Greece?',
@@ -60,7 +60,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.WheelsGlory,
   },
   {
-    id: 5,
+    id: 'theRoarOfTheCircusMaximusQuestion',
     era: 'Rome',
     question: 'What was the name of Rome’s largest chariot racing arena?',
     options: [
@@ -71,7 +71,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.TheRoarCircusMaximus,
   },
   {
-    id: 6,
+    id: 'divineJourneyOfArjunaQuestion',
     era: 'India',
     question: 'In the Bhagavad Gita, what does Arjuna’s chariot symbolize?',
     options: [
@@ -82,7 +82,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.DivineJourney,
   },
   {
-    id: 7,
+    id: 'theChariotsOfZhouQuestion',
     era: 'China',
     question: 'During the Zhou dynasty, what did the chariot represent?',
     options: [
@@ -93,7 +93,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.TheChariotsZhou,
   },
   {
-    id: 8,
+    id: 'ridersOfTheSteppeQuestion',
     era: 'Scythia',
     question: 'What was unique about Scythian use of chariots?',
     options: [
@@ -104,7 +104,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.RidersSteppe,
   },
   {
-    id: 9,
+    id: 'theCelticSpiritQuestion',
     era: 'Celtic Lands',
     question: 'How did Celtic warriors typically use their chariots in battle?',
     options: [
@@ -115,7 +115,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.TheCelticSpirit,
   },
   {
-    id: 10,
+    id: 'chariotsOfTheGreatKingsQuestion',
     era: 'Persia',
     question: 'What feature made Persian war chariots especially fearsome?',
     options: [
@@ -126,7 +126,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.ChariotsGreatKings,
   },
   {
-    id: 11,
+    id: 'theLastRaceQuestion',
     era: 'Late Roman Empire',
     question:
       'What did chariot races symbolize in the final days of the Roman Empire?',
@@ -138,7 +138,7 @@ export const CHARIOT_QUIZ_QUESTIONS: ChariotQuizQuestion[] = [
     image: PLACES.TheLastRace,
   },
   {
-    id: 12,
+    id: 'fromChariotToCarriageQuestion',
     era: 'Medieval Europe',
     question: 'How did the chariot evolve in Medieval Europe?',
     options: [

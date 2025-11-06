@@ -1,12 +1,12 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { selectIsOnboardingCompleted } from 'src/redux/slices/onboarding/selectors';
 
 import MainNavigator from './MainNavigator';
 import OnboardingNavigator from './OnboardingNavigator';
 
 import { Layout } from 'src/components/layout';
 import { useAppSelector } from 'src/hooks/toolkit';
+import { selectIsOnboardingCompleted } from 'src/redux/slices/onboarding/selectors';
 import type { RootStackParamsList } from 'src/types/rootNavigation';
 
 const Root = createNativeStackNavigator<RootStackParamsList>();

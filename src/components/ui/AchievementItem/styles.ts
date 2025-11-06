@@ -6,27 +6,28 @@ import { hp, sp, wp } from 'src/utils';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: hp(5),
+    padding: wp(5),
   },
-  emptyContainer: {
-    flex: 1,
+  imageContainer: {
+    width: '100%',
+    aspectRatio: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  emptyImage: {
-    width: wp(210),
-    height: hp(255),
+  image: {
+    width: '100%',
+    height: '100%',
   },
-  emptyTextContainer: {
-    padding: wp(16),
-    gap: hp(12),
-  },
-  emptyTextTitle: {
-    fontSize: sp(20),
-    fontFamily: FONTS.RobotoBold,
+  title: {
+    fontSize: sp(15),
+    fontFamily: FONTS.RobotoMedium,
     textAlign: 'center',
   },
-  emptyTextDescription: {
-    fontSize: sp(18),
+  description: {
+    fontSize: sp(11),
     fontFamily: FONTS.RobotoItalic,
     textAlign: 'center',
   },

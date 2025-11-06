@@ -1,5 +1,6 @@
 import AchievementsScreen from './AchievementsScreen/AchievementsScreen';
 import ArticlesScreen from './ArticlesScreen/ArticlesScreen';
+import DetailsScreen from './DetailsScreen/DetailsScreen';
 import FavouritesScreen from './FavouritesScreen/FavouritesScreen';
 import HomeScreen from './HomeScreen/HomeScreen';
 import OnboardingScreen from './Onboarding/OnboardingScreen';
@@ -22,4 +23,5 @@ export {
   QuizScreen,
   SettingsScreen,
   VictoryScreen,
+  DetailsScreen,
 };

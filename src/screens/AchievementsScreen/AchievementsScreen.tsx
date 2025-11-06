@@ -1,11 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+
+import { styles } from './styles';
+
+import { CustomScreenWrapper, AchievementsList } from 'src/components/ui';
 
 const AchievementsScreen = () => {
   return (
-    <View>
-      <Text>AchievementsScreen</Text>
-    </View>
+    <CustomScreenWrapper extraStyle={styles.container}>
+      <AchievementsList />
+    </CustomScreenWrapper>
   );
 };
 
