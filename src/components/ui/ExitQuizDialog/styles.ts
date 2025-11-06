@@ -4,54 +4,27 @@ import { FONTS } from 'src/constants';
 import { hp, sp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
-  container: {
+  overlay: {
     flex: 1,
-    backgroundColor: 'transparent',
-  },
-  videoContainer: {
-    ...StyleSheet.absoluteFillObject,
-    zIndex: 1,
-    pointerEvents: 'none',
-  },
-  video: {
-    width: '100%',
-    height: '100%',
-  },
-  scrollContent: {
-    flexGrow: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: wp(20),
-    paddingTop: hp(60),
-    paddingBottom: hp(40),
+    paddingHorizontal: wp(40),
   },
-  trophyContainer: {
-    width: wp(200),
-    height: hp(300),
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: hp(30),
-  },
-  trophy: {
-    width: '100%',
-    height: '100%',
-  },
-  resultCard: {
+  dialog: {
     padding: wp(24),
     gap: hp(20),
-    width: '100%',
+    minWidth: wp(280),
   },
   title: {
-    fontSize: sp(24),
+    fontSize: sp(20),
     fontFamily: FONTS.RobotoBold,
     textAlign: 'center',
-    color: '#fff',
   },
-  description: {
+  message: {
     fontSize: sp(16),
     fontFamily: FONTS.RobotoMedium,
     textAlign: 'center',
-    color: '#fff',
     lineHeight: sp(22),
   },
   buttonsContainer: {
@@ -62,14 +35,17 @@ export const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    paddingVertical: hp(14),
+    paddingVertical: hp(12),
     paddingHorizontal: wp(20),
     justifyContent: 'center',
     alignItems: 'center',
   },
-  buttonText: {
+  confirmText: {
     fontSize: sp(16),
     fontFamily: FONTS.RobotoBold,
-    color: '#fff',
+  },
+  cancelText: {
+    fontSize: sp(16),
+    fontFamily: FONTS.RobotoBold,
   },
 });

@@ -67,7 +67,6 @@ const MainNavigator = () => {
         <Main.Screen
           options={{
             headerShown: false,
-            presentation: 'transparentModal',
             animation: 'fade',
           }}
           name={'VictoryScreen'}

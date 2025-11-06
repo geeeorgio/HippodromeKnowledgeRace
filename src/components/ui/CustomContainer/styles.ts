@@ -13,4 +13,5 @@ export const styles = StyleSheet.create({
   },
   white: { borderColor: COLORS.white },
   yellow: { borderColor: COLORS.borderColor },
+  purple: { borderColor: COLORS.borderColor },
 });

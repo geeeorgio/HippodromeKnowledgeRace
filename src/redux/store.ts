@@ -16,6 +16,7 @@ import { articlesReducer } from './slices/articles/slice';
 import { filterReducer } from './slices/filter/slice';
 import { loaderReducer } from './slices/loader/slice';
 import { onboardingReducer } from './slices/onboarding/slice';
+import { quizReducer } from './slices/quiz/slice';
 
 const onboardingPersistConfig = {
   key: 'onboarding',
@@ -54,6 +55,7 @@ const store = configureStore({
     articles: articlesPersistedReducer,
     achievements: achievementsPersistedReducer,
     filter: filterReducer,
+    quiz: quizReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

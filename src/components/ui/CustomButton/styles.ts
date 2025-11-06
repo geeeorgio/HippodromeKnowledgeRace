@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     borderRadius: wp(12),
   },
   btnPressed: {
-    opacity: 0.7,
+    opacity: 0.5,
   },
   btnDisabled: {
     backgroundColor: COLORS.rgbaPurpleBtn,
@@ -40,6 +40,14 @@ export const styles = StyleSheet.create({
   },
   red: {
     backgroundColor: COLORS.red,
+    borderRadius: wp(12),
+  },
+  purpleOpacity: {
+    backgroundColor: COLORS.rgbaPurple,
+    borderRadius: wp(12),
+  },
+  selected: {
+    backgroundColor: COLORS.purpleContainer,
     borderRadius: wp(12),
   },
 });

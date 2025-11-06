@@ -39,3 +39,14 @@ export const REWARDS = {
   WisdomDark: require('../assets/images/rewards/wisdomDark.png'),
   WisdomSilver: require('../assets/images/rewards/wisdomSilver.png'),
 };
+
+export const TROPHIES = {
+  Bronze: REWARDS.RacerBronze,
+  Silver: REWARDS.WisdomSilver,
+  Gold: REWARDS.MasterGold,
+};
+
+export const VIDEOS = {
+  Correct: require('../assets/video/correct.gif'),
+  Win: require('../assets/video/win.gif'),
+};

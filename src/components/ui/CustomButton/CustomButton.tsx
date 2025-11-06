@@ -10,7 +10,15 @@ interface CustomButtonProps {
   handlePress?: () => void;
   isDisabled?: boolean;
   distance?: Insets;
-  variant?: 'default' | 'white' | 'purple' | 'green' | 'red' | 'blue';
+  variant?:
+    | 'default'
+    | 'white'
+    | 'purple'
+    | 'green'
+    | 'red'
+    | 'blue'
+    | 'purpleOpacity'
+    | 'selected';
   fullWidth?: boolean;
   extraStyle?: StyleProp<ViewStyle>;
 }
@@ -22,6 +30,8 @@ const variantStyles = {
   green: styles.green,
   red: styles.red,
   blue: styles.blue,
+  purpleOpacity: styles.purpleOpacity,
+  selected: styles.selected,
 };
 
 const CustomButton = ({
@@ -33,6 +43,12 @@ const CustomButton = ({
   fullWidth = false,
   extraStyle,
 }: CustomButtonProps) => {
+  const shouldApplyDisabledStyle =
+    isDisabled &&
+    variant !== 'green' &&
+    variant !== 'red' &&
+    variant !== 'purpleOpacity';
+
   return (
     <Pressable
       style={({ pressed }) => [
@@ -40,7 +56,7 @@ const CustomButton = ({
         extraStyle,
         pressed && styles.btnPressed,
         fullWidth && { alignSelf: 'stretch' },
-        isDisabled && styles.btnDisabled,
+        shouldApplyDisabledStyle && styles.btnDisabled,
       ]}
       onPress={handlePress}
       disabled={isDisabled}

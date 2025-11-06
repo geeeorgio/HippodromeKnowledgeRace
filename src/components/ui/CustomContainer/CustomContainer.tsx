@@ -6,13 +6,14 @@ import { styles } from './styles';
 
 interface CustomContainerProps {
   extraStyle?: StyleProp<ViewStyle>;
-  variant: 'white' | 'yellow';
+  variant: 'white' | 'yellow' | 'purple';
   children?: ReactNode;
 }
 
 const variantStyles = {
   white: styles.white,
   yellow: styles.yellow,
+  purple: styles.purple,
 };
 
 const CustomContainer = ({
