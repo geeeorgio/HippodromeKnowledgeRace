@@ -7,15 +7,14 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: hp(20),
-    padding: wp(14),
+    padding: wp(10),
   },
   scrollViewContent: {
-    flex: 1,
-    gap: hp(16),
+    gap: hp(8),
     marginBottom: hp(20),
   },
   title: {
-    fontSize: sp(18),
+    fontSize: sp(17),
     fontFamily: FONTS.RobotoMedium,
     textAlign: 'center',
   },
@@ -33,7 +32,7 @@ export const styles = StyleSheet.create({
     borderRadius: wp(7),
   },
   imageText: {
-    fontSize: sp(15),
+    fontSize: sp(14),
     fontFamily: FONTS.RobotoMedium,
     textAlign: 'center',
   },

@@ -24,6 +24,7 @@ import QuizAnswerOption from './QuizAnswerOption/QuizAnswerOption';
 import QuizIntro from './QuizIntro/QuizIntro';
 import QuizQuestionCard from './QuizQuestionCard/QuizQuestionCard';
 import QuizVideo from './QuizVideo/QuizVideo';
+import SettingsModalDialog from './SettingsModalDialog/SettingsModalDialog';
 
 export {
   AchievementItem,
@@ -52,4 +53,5 @@ export {
   QuizIntro,
   QuizQuestionCard,
   QuizVideo,
+  SettingsModalDialog,
 };

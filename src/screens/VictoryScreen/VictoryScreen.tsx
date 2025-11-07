@@ -1,19 +1,29 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, ScrollView, View } from 'react-native';
 
 import { styles } from './styles';
 
-import { CustomButton, CustomContainer, CustomText } from 'src/components/ui';
+import {
+  CustomButton,
+  CustomContainer,
+  CustomText,
+  QuizVideo,
+} from 'src/components/ui';
 import { QUIZ_RESULT_TEXTS, TROPHIES, VIDEOS } from 'src/constants';
 import { useAppDispatch, useAppSelector } from 'src/hooks/toolkit';
-import { selectTrophyType } from 'src/redux/slices/quiz/selectors';
+import {
+  selectIsQuizCompleted,
+  selectTrophyType,
+} from 'src/redux/slices/quiz/selectors';
 import { resetQuiz } from 'src/redux/slices/quiz/slice';
 import type { MainStackNavigationProp } from 'src/types/mainStack';
 
 const VictoryScreen = () => {
   const navigation = useNavigation<MainStackNavigationProp>();
   const dispatch = useAppDispatch();
+  const [showVideo, setShowVideo] = useState(true);
+  const isQuizCompleted = useAppSelector(selectIsQuizCompleted);
 
   const trophyType = useAppSelector(selectTrophyType);
 
@@ -33,6 +43,12 @@ const VictoryScreen = () => {
   const handleTryAgain = () => {
     dispatch(resetQuiz());
     navigation.navigate('QuizScreen');
+  };
+
+  const handleVideoEnd = () => {
+    if (isQuizCompleted) {
+      setShowVideo(false);
+    }
   };
 
   return (
@@ -78,6 +94,7 @@ const VictoryScreen = () => {
           </View>
         </CustomContainer>
       </ScrollView>
+      {showVideo && <QuizVideo onEnd={handleVideoEnd} />}
     </View>
   );
 };

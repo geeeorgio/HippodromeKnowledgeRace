@@ -12,7 +12,7 @@ export const COLORS = {
 
   rgbaPurple: 'rgba(93, 74, 204, 0.5)',
   rgbaPurpleBtn: 'rgba(56, 34, 255, 0.3)',
-  rgbaPurpleOverlay: 'rgba(9, 14, 44, 0.55)',
+  rgbaPurpleOverlay: 'rgba(9, 14, 88, 0.3)',
 
   borderColor: '#bd8644',
 

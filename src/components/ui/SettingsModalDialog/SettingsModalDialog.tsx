@@ -7,17 +7,21 @@ import CustomText from '../CustomText/CustomText';
 
 import { styles } from './styles';
 
-interface ExitQuizDialogProps {
+interface SettingsModalDialogProps {
   visible: boolean;
-  onConfirm: () => void;
   onCancel: () => void;
+  label: string;
+  description: string;
+  onConfirm: () => void;
 }
 
-const ExitQuizDialog = ({
+const SettingsModalDialog = ({
   visible,
-  onConfirm,
   onCancel,
-}: ExitQuizDialogProps) => {
+  label,
+  description,
+  onConfirm,
+}: SettingsModalDialogProps) => {
   return (
     <Modal
       visible={visible}
@@ -29,10 +33,9 @@ const ExitQuizDialog = ({
       <Pressable style={styles.overlay} onPress={onCancel}>
         <Pressable onPress={(e) => e.stopPropagation()}>
           <CustomContainer variant="white" extraStyle={styles.dialog}>
-            <CustomText extraStyle={styles.title}>Exit the Quiz?</CustomText>
-            <CustomText extraStyle={styles.message}>
-              Are you sure you want to quit? Your current progress will not be
-              saved.
+            <CustomText extraStyle={styles.title}>{label}</CustomText>
+            <CustomText extraStyle={styles.description}>
+              {description}
             </CustomText>
           </CustomContainer>
 
@@ -44,7 +47,6 @@ const ExitQuizDialog = ({
             >
               <CustomText extraStyle={styles.confirmText}>Confirm</CustomText>
             </CustomButton>
-
             <CustomButton
               variant="green"
               handlePress={onCancel}
@@ -59,4 +61,4 @@ const ExitQuizDialog = ({
   );
 };
 
-export default ExitQuizDialog;
+export default SettingsModalDialog;

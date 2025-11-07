@@ -21,8 +21,8 @@ export const styles = StyleSheet.create({
     fontFamily: FONTS.RobotoBold,
     textAlign: 'center',
   },
-  message: {
-    fontSize: sp(16),
+  description: {
+    fontSize: sp(20),
     fontFamily: FONTS.RobotoItalic,
     textAlign: 'center',
   },
@@ -40,11 +40,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  confirmText: {
+  cancelText: {
     fontSize: sp(16),
     fontFamily: FONTS.RobotoBold,
   },
-  cancelText: {
+  confirmText: {
     fontSize: sp(16),
     fontFamily: FONTS.RobotoBold,
   },

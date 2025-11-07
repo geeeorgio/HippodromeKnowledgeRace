@@ -10,6 +10,6 @@ export const styles = StyleSheet.create({
     gap: hp(8),
   },
   row: {
-    gap: wp(16),
+    gap: wp(8),
   },
 });

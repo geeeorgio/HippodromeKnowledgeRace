@@ -8,8 +8,9 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  image: {
+  lottie: {
     width: '100%',
     height: '100%',
+    backgroundColor: 'transparent',
   },
 });

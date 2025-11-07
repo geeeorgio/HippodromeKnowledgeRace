@@ -26,6 +26,7 @@ const OnboardingScreen = () => {
         styles.container,
         {
           paddingTop: insets.top + hp(20),
+          paddingBottom: insets.bottom,
         },
       ]}
       start={{ x: 0.5, y: 1 }}

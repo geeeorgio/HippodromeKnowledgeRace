@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Image, View } from 'react-native';
+import LottieView from 'lottie-react-native';
+import { View } from 'react-native';
 
 import { styles } from './styles';
 
@@ -10,17 +10,16 @@ interface ConfettiProps {
 }
 
 const Confetti = ({ onEnd }: ConfettiProps) => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      onEnd();
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, [onEnd]);
-
   return (
     <View style={styles.container}>
-      <Image source={VIDEOS.Correct} style={styles.image} resizeMode="cover" />
+      <LottieView
+        source={VIDEOS.Correct}
+        autoPlay
+        loop={false}
+        resizeMode="cover"
+        style={styles.lottie}
+        onAnimationFinish={onEnd}
+      />
     </View>
   );
 };

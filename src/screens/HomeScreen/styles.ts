@@ -17,10 +17,10 @@ export const styles = StyleSheet.create({
   },
   btn: {
     width: '100%',
-    paddingVertical: hp(12),
+    paddingVertical: hp(10),
   },
   btnText: {
-    fontSize: sp(22),
+    fontSize: sp(21),
     fontFamily: FONTS.RobotoExtraBold,
     textAlign: 'center',
   },

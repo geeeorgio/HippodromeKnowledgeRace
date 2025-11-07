@@ -1,15 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 import { FONTS } from 'src/constants';
-import { hp, sp, wp } from 'src/utils';
+import { sp } from 'src/utils';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    gap: hp(5),
-    padding: wp(5),
   },
   imageContainer: {
     width: '100%',
@@ -22,12 +20,12 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   title: {
-    fontSize: sp(15),
+    fontSize: sp(12),
     fontFamily: FONTS.RobotoMedium,
     textAlign: 'center',
   },
   description: {
-    fontSize: sp(11),
+    fontSize: sp(9),
     fontFamily: FONTS.RobotoItalic,
     textAlign: 'center',
   },

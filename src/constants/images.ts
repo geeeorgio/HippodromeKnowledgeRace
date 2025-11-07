@@ -47,6 +47,6 @@ export const TROPHIES = {
 };
 
 export const VIDEOS = {
-  Correct: require('../assets/video/correct.gif'),
-  Win: require('../assets/video/win.gif'),
+  Correct: require('../assets/video/correctAnswer.json'),
+  Win: require('../assets/video/winConfetti.json'),
 };

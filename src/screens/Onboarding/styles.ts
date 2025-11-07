@@ -32,22 +32,22 @@ export const styles = StyleSheet.create({
     gap: hp(16),
   },
   title: {
-    fontSize: sp(22),
+    fontSize: sp(21),
     fontFamily: FONTS.RobotoExtraBold,
     textAlign: 'center',
   },
   description: {
-    fontSize: sp(18),
+    fontSize: sp(17),
     fontFamily: FONTS.RobotoItalic,
     textAlign: 'center',
   },
   button: {
     width: '33%',
     paddingVertical: hp(5),
-    marginBottom: hp(50),
+    marginBottom: hp(20),
   },
   buttonText: {
-    fontSize: sp(18),
+    fontSize: sp(17),
     fontFamily: FONTS.RobotoExtraBold,
     textAlign: 'center',
   },

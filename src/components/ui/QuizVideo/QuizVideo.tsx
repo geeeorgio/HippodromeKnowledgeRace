@@ -1,35 +1,26 @@
-import React, { useEffect } from 'react';
-import { Image, View } from 'react-native';
+import LottieView from 'lottie-react-native';
+import React from 'react';
+import { View } from 'react-native';
 
 import { styles } from './styles';
 
+import { VIDEOS } from 'src/constants';
+
 interface QuizVideoProps {
-  source: any;
-  onEnd?: () => void;
-  loop?: boolean;
-  muted?: boolean;
+  onEnd: () => void;
 }
 
-const QuizVideo = ({
-  source,
-  onEnd,
-  loop = false,
-  muted: _muted = false,
-}: QuizVideoProps) => {
-  useEffect(() => {
-    if (!loop && onEnd) {
-      const timer = setTimeout(() => {
-        onEnd();
-      }, 2000);
-
-      return () => clearTimeout(timer);
-    }
-    return undefined;
-  }, [loop, onEnd]);
-
+const QuizVideo = ({ onEnd }: QuizVideoProps) => {
   return (
     <View style={styles.container}>
-      <Image source={source} style={styles.video} resizeMode="cover" />
+      <LottieView
+        source={VIDEOS.Win}
+        autoPlay
+        loop={false}
+        style={styles.lottie}
+        resizeMode="cover"
+        onAnimationFinish={onEnd}
+      />
     </View>
   );
 };

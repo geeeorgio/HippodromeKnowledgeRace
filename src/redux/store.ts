@@ -17,6 +17,7 @@ import { filterReducer } from './slices/filter/slice';
 import { loaderReducer } from './slices/loader/slice';
 import { onboardingReducer } from './slices/onboarding/slice';
 import { quizReducer } from './slices/quiz/slice';
+import { settingsReducer } from './slices/settings/slice';
 
 const onboardingPersistConfig = {
   key: 'onboarding',
@@ -30,6 +31,11 @@ const articlesPersistConfig = {
 
 const achievementsPersistConfig = {
   key: 'achievements',
+  storage: AsyncStorage,
+};
+
+const settingsPersistConfig = {
+  key: 'settings',
   storage: AsyncStorage,
 };
 
@@ -48,12 +54,18 @@ const achievementsPersistedReducer = persistReducer(
   achievementsReducer,
 );
 
+const settingsPersistedReducer = persistReducer(
+  settingsPersistConfig,
+  settingsReducer,
+);
+
 const store = configureStore({
   reducer: {
     loader: loaderReducer,
     onboarding: onboardingPersistedReducer,
     articles: articlesPersistedReducer,
     achievements: achievementsPersistedReducer,
+    settings: settingsPersistedReducer,
     filter: filterReducer,
     quiz: quizReducer,
   },

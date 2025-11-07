@@ -2,19 +2,15 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    zIndex: 1,
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 99,
     pointerEvents: 'none',
-    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  video: {
+  lottie: {
     width: '100%',
     height: '100%',
     backgroundColor: 'transparent',
-    pointerEvents: 'none',
   },
 });
