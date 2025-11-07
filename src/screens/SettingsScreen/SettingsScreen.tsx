@@ -26,8 +26,8 @@ import {
 } from 'src/redux/slices/settings/selectors';
 import { setSound, setVibration } from 'src/redux/slices/settings/slice';
 import { handleShare, wp } from 'src/utils';
-import { playCorrectSound } from 'src/utils/quizSounds';
 import { vibrateForCorrect } from 'src/utils/quizVibration';
+import { playCorrectSound } from 'src/utils/sounds';
 
 const SettingsScreen = () => {
   const dispatch = useAppDispatch();

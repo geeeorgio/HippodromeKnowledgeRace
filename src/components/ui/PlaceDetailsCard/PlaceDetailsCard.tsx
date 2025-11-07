@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Image, ScrollView, View } from 'react-native';
 
 import CustomButton from '../CustomButton/CustomButton';
@@ -11,6 +11,7 @@ import { styles } from './styles';
 
 import { COLORS, type HistoryPlace } from 'src/constants';
 import { useAppDispatch, useAppSelector } from 'src/hooks/toolkit';
+import { addReadArticleId } from 'src/redux/slices/achievements/slice';
 import { selectIsArticleFavorite } from 'src/redux/slices/articles/selectors';
 import {
   addFavoriteArticle,
@@ -24,6 +25,10 @@ interface PlaceDetailsCardProps {
 
 const PlaceDetailsCard = ({ article }: PlaceDetailsCardProps) => {
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(addReadArticleId(article.id));
+  }, [article.id, dispatch]);
 
   const isFavorite = useAppSelector(selectIsArticleFavorite(article));
 

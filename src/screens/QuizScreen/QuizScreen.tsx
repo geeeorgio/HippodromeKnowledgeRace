@@ -30,15 +30,26 @@ import {
   nextQuestion,
   revealAnswer,
   selectAnswer,
-  showExitDialog as showExitDialogAction,
+  showExitDialog,
   startQuiz,
 } from 'src/redux/slices/quiz/slice';
+import {
+  selectSoundEnabled,
+  selectVibrationEnabled,
+} from 'src/redux/slices/settings/selectors';
 import type { MainStackNavigationProp } from 'src/types/mainStack';
-import { playCorrectSound, playIncorrectSound } from 'src/utils/quizSounds';
 import {
   vibrateForCorrect,
   vibrateForIncorrect,
 } from 'src/utils/quizVibration';
+import {
+  loadSounds,
+  playBackgroundMusic,
+  playCorrectSound,
+  playIncorrectSound,
+  releaseAll,
+  stopBackgroundMusic,
+} from 'src/utils/sounds';
 
 const QuizScreen = () => {
   const navigation = useNavigation<MainStackNavigationProp>();
@@ -50,13 +61,18 @@ const QuizScreen = () => {
   const selectedAnswerIndex = useAppSelector(selectSelectedAnswerIndex);
   const isAnswerConfirmed = useAppSelector(selectIsAnswerConfirmed);
   const isAnswerRevealed = useAppSelector(selectIsAnswerRevealed);
-  const showExitDialog = useAppSelector(selectShowExitDialog);
+  const showExitDialogState = useAppSelector(selectShowExitDialog);
   const correctAnswersCount = useAppSelector(selectCorrectAnswersCount);
+  const soundEnabled = useAppSelector(selectSoundEnabled);
+  const vibrationEnabled = useAppSelector(selectVibrationEnabled);
 
   const [showConfetti, setShowConfetti] = useState(false);
 
   const handleStart = () => {
     dispatch(startQuiz());
+    if (soundEnabled) {
+      playBackgroundMusic();
+    }
   };
 
   const handleSelectAnswer = (index: number) => {
@@ -74,12 +90,20 @@ const QuizScreen = () => {
 
     if (isCorrect) {
       dispatch(incrementCorrectAnswers());
-      playCorrectSound();
-      vibrateForCorrect();
+      if (soundEnabled) {
+        playCorrectSound();
+      }
+      if (vibrationEnabled) {
+        vibrateForCorrect();
+      }
       setShowConfetti(true);
     } else {
-      playIncorrectSound();
-      vibrateForIncorrect();
+      if (soundEnabled) {
+        playIncorrectSound();
+      }
+      if (vibrationEnabled) {
+        vibrateForIncorrect();
+      }
     }
   };
 
@@ -102,6 +126,9 @@ const QuizScreen = () => {
       if (correctAnswersCount >= 8) {
         dispatch(addCompletedAchievement({ id: 'masterOfTheArena' }));
       }
+      if (soundEnabled) {
+        stopBackgroundMusic();
+      }
       navigation.navigate('VictoryScreen');
     } else {
       dispatch(nextQuestion());
@@ -109,6 +136,9 @@ const QuizScreen = () => {
   };
 
   const handleExitConfirm = () => {
+    if (soundEnabled) {
+      stopBackgroundMusic();
+    }
     dispatch(exitQuiz());
     dispatch(hideExitDialog());
     navigation.goBack();
@@ -121,16 +151,31 @@ const QuizScreen = () => {
   useFocusEffect(
     useCallback(() => {
       const unsubscribe = navigation.addListener('beforeRemove', (e) => {
-        if (!isQuizStarted || showExitDialog) {
+        if (!isQuizStarted || showExitDialogState) {
           return;
         }
 
         e.preventDefault();
-        dispatch(showExitDialogAction());
+        dispatch(showExitDialog());
       });
 
       return unsubscribe;
-    }, [isQuizStarted, showExitDialog, navigation, dispatch]),
+    }, [isQuizStarted, showExitDialogState, navigation, dispatch]),
+  );
+
+  useFocusEffect(
+    useCallback(() => {
+      if (soundEnabled) {
+        loadSounds();
+      }
+
+      return () => {
+        if (soundEnabled) {
+          stopBackgroundMusic();
+          releaseAll();
+        }
+      };
+    }, [soundEnabled]),
   );
 
   if (!isQuizStarted) {
@@ -158,7 +203,7 @@ const QuizScreen = () => {
         onNext={handleNext}
       />
       <ExitQuizDialog
-        visible={showExitDialog}
+        visible={showExitDialogState}
         onConfirm={handleExitConfirm}
         onCancel={handleExitCancel}
       />

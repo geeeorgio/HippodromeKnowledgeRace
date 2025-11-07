@@ -1,3 +1,4 @@
+import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { Achievement } from 'src/constants';
@@ -7,12 +8,14 @@ interface AchievementsState {
   achievements: Achievement[];
   currentAchievement: Achievement | undefined;
   completedAchievements: Achievement[] | undefined;
+  readArticleIds: string[];
 }
 
 const initialState: AchievementsState = {
   achievements: ACHIEVEMENTS,
   currentAchievement: undefined,
   completedAchievements: [],
+  readArticleIds: [],
 };
 
 const slice = createSlice({
@@ -42,10 +45,16 @@ const slice = createSlice({
     resetCompletedAchievements: (state) => {
       state.completedAchievements = [];
     },
+    addReadArticleId: (state, action: PayloadAction<string>) => {
+      if (!state.readArticleIds.includes(action.payload)) {
+        state.readArticleIds.push(action.payload);
+      }
+    },
     resetAchievements: (state) => {
       state.achievements = ACHIEVEMENTS;
       state.currentAchievement = undefined;
       state.completedAchievements = [];
+      state.readArticleIds = [];
     },
   },
 });
@@ -57,6 +66,7 @@ export const {
   removeCompletedAchievement,
   resetCompletedAchievements,
   resetAchievements,
+  addReadArticleId,
 } = slice.actions;
 
 export const achievementsReducer = slice.reducer;

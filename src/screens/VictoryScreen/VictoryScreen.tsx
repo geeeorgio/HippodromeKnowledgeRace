@@ -7,10 +7,11 @@ import { styles } from './styles';
 import {
   CustomButton,
   CustomContainer,
+  CustomScreenWrapper,
   CustomText,
   QuizVideo,
 } from 'src/components/ui';
-import { QUIZ_RESULT_TEXTS, TROPHIES, VIDEOS } from 'src/constants';
+import { QUIZ_RESULT_TEXTS, TROPHIES } from 'src/constants';
 import { useAppDispatch, useAppSelector } from 'src/hooks/toolkit';
 import {
   selectIsQuizCompleted,
@@ -52,11 +53,7 @@ const VictoryScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.videoContainer}>
-        <Image source={VIDEOS.Win} style={styles.video} resizeMode="cover" />
-      </View>
-
+    <CustomScreenWrapper extraStyle={styles.container}>
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
@@ -74,28 +71,28 @@ const VictoryScreen = () => {
           <CustomText extraStyle={styles.description}>
             {resultText.description}
           </CustomText>
-
-          <View style={styles.buttonsContainer}>
-            <CustomButton
-              variant="purple"
-              handlePress={handleMainMenu}
-              extraStyle={styles.button}
-            >
-              <CustomText extraStyle={styles.buttonText}>Main Menu</CustomText>
-            </CustomButton>
-
-            <CustomButton
-              variant="purple"
-              handlePress={handleTryAgain}
-              extraStyle={styles.button}
-            >
-              <CustomText extraStyle={styles.buttonText}>Try Again</CustomText>
-            </CustomButton>
-          </View>
         </CustomContainer>
       </ScrollView>
+
+      <View style={styles.buttonsContainer}>
+        <CustomButton
+          variant="blue"
+          handlePress={handleMainMenu}
+          extraStyle={styles.button}
+        >
+          <CustomText extraStyle={styles.buttonText}>Main Menu</CustomText>
+        </CustomButton>
+
+        <CustomButton
+          variant="blue"
+          handlePress={handleTryAgain}
+          extraStyle={styles.button}
+        >
+          <CustomText extraStyle={styles.buttonText}>Try Again</CustomText>
+        </CustomButton>
+      </View>
       {showVideo && <QuizVideo onEnd={handleVideoEnd} />}
-    </View>
+    </CustomScreenWrapper>
   );
 };
 
