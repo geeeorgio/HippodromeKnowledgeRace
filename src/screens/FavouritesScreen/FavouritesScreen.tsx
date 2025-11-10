@@ -29,11 +29,11 @@ const FavouritesScreen = () => {
         <PlacesList places={articles} handlePress={handlePress} />
       ) : (
         <View style={styles.emptyContainer}>
-          <Image
+          {/* <Image
             source={GIRL.FAVOURITE_GIRL}
             style={styles.emptyImage}
             resizeMode="cover"
-          />
+          /> */}
           <CustomContainer
             variant="white"
             extraStyle={styles.emptyTextContainer}

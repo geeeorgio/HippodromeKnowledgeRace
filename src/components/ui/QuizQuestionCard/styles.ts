@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
   },
   progressDotActive: {
-    backgroundColor: COLORS.blue,
+    backgroundColor: COLORS.darkGrey,
   },
   questionText: {
     fontSize: sp(20),

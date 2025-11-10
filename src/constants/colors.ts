@@ -6,6 +6,8 @@ export const COLORS = {
   green: '#008F56',
   red: '#B31C1C',
   blue: '#0E008D',
+  redbtn: 'rgba(179, 28, 28, 0.7)',
+  wrongRed: '#D32F2F',
 
   darkGrey: '#171717',
   black: '#000',
@@ -17,4 +19,5 @@ export const COLORS = {
   borderColor: '#bd8644',
 
   blueGradient: ['#20314f', '#133a7d'],
+  redGradient: ['#850C0C', '#960505'],
 };

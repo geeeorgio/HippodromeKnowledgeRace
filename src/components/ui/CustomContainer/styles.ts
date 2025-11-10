@@ -8,10 +8,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(12),
-    backgroundColor: COLORS.purpleContainer,
+    backgroundColor: COLORS.redbtn,
     borderWidth: wp(1),
   },
   white: { borderColor: COLORS.white },
   yellow: { borderColor: COLORS.borderColor },
   purple: { borderColor: COLORS.borderColor },
+  red: { borderColor: COLORS.red },
 });

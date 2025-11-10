@@ -13,23 +13,23 @@ export const styles = StyleSheet.create({
     opacity: 0.5,
   },
   btnDisabled: {
-    backgroundColor: COLORS.rgbaPurpleBtn,
+    backgroundColor: '#333333',
     borderRadius: wp(12),
   },
   blue: {
-    backgroundColor: COLORS.purpleBtn,
+    backgroundColor: COLORS.redbtn,
     borderColor: COLORS.borderColor,
     borderWidth: wp(1),
     borderRadius: wp(12),
   },
   white: {
-    backgroundColor: COLORS.purpleContainer,
+    backgroundColor: COLORS.redbtn,
     borderColor: COLORS.white,
     borderWidth: wp(1),
     borderRadius: wp(12),
   },
   purple: {
-    backgroundColor: COLORS.purpleContainer,
+    backgroundColor: COLORS.redbtn,
     borderColor: COLORS.borderColor,
     borderWidth: wp(1),
     borderRadius: wp(12),
@@ -39,15 +39,15 @@ export const styles = StyleSheet.create({
     borderRadius: wp(12),
   },
   red: {
-    backgroundColor: COLORS.red,
+    backgroundColor: COLORS.wrongRed,
     borderRadius: wp(12),
   },
   purpleOpacity: {
-    backgroundColor: COLORS.rgbaPurple,
+    backgroundColor: COLORS.redbtn,
     borderRadius: wp(12),
   },
   selected: {
-    backgroundColor: COLORS.purpleContainer,
+    backgroundColor: COLORS.red,
     borderRadius: wp(12),
   },
 });

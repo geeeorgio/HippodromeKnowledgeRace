@@ -21,7 +21,7 @@ const OnboardingScreen = () => {
 
   return (
     <LinearGradient
-      colors={COLORS.blueGradient}
+      colors={COLORS.redGradient}
       style={[
         styles.container,
         {
@@ -37,11 +37,11 @@ const OnboardingScreen = () => {
         resizeMode="cover"
         style={styles.imageContainer}
       >
-        <Image
+        {/* <Image
           source={GIRL.GIRL_NOTEBOOK}
           style={styles.image}
           resizeMode="contain"
-        />
+        /> */}
       </ImageBackground>
 
       <View style={styles.contentContainer}>

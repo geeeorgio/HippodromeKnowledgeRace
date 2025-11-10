@@ -18,11 +18,11 @@ const QuizIntro = ({ onStart }: QuizIntroProps) => {
     <View style={styles.container}>
       <View>
         <View style={styles.imageContainer}>
-          <Image
+          {/* <Image
             source={GIRL.QUIZ_GIRL}
             style={styles.image}
             resizeMode="contain"
-          />
+          /> */}
         </View>
 
         <CustomContainer variant="purple" extraStyle={styles.card}>

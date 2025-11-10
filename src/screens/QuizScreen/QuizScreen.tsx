@@ -70,9 +70,9 @@ const QuizScreen = () => {
 
   const handleStart = () => {
     dispatch(startQuiz());
-    if (soundEnabled) {
-      playBackgroundMusic();
-    }
+    // if (soundEnabled) {
+    //   playBackgroundMusic();
+    // }
   };
 
   const handleSelectAnswer = (index: number) => {
