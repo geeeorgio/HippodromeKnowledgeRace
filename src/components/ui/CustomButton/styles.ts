@@ -17,19 +17,19 @@ export const styles = StyleSheet.create({
     borderRadius: wp(12),
   },
   blue: {
-    backgroundColor: COLORS.redbtn,
+    backgroundColor: COLORS.axiantBlue,
     borderColor: COLORS.borderColor,
     borderWidth: wp(1),
     borderRadius: wp(12),
   },
   white: {
-    backgroundColor: COLORS.redbtn,
+    backgroundColor: COLORS.axiantBlue,
     borderColor: COLORS.white,
     borderWidth: wp(1),
     borderRadius: wp(12),
   },
   purple: {
-    backgroundColor: COLORS.redbtn,
+    backgroundColor: COLORS.axiantBlue,
     borderColor: COLORS.borderColor,
     borderWidth: wp(1),
     borderRadius: wp(12),
@@ -43,11 +43,11 @@ export const styles = StyleSheet.create({
     borderRadius: wp(12),
   },
   purpleOpacity: {
-    backgroundColor: COLORS.redbtn,
+    backgroundColor: COLORS.axiantBlueOpacity,
     borderRadius: wp(12),
   },
   selected: {
-    backgroundColor: COLORS.red,
+    backgroundColor: COLORS.axiantBlueOpacitySelected,
     borderRadius: wp(12),
   },
 });

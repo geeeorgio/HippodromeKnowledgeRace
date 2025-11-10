@@ -21,7 +21,7 @@ const OnboardingScreen = () => {
 
   return (
     <LinearGradient
-      colors={COLORS.redGradient}
+      colors={COLORS.axiantGradient}
       style={[
         styles.container,
         {
@@ -34,7 +34,7 @@ const OnboardingScreen = () => {
     >
       <ImageBackground
         source={ONBOARDING_BACKGROUND}
-        resizeMode="cover"
+        resizeMode="contain"
         style={styles.imageContainer}
       >
         {/* <Image

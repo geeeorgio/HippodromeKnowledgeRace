@@ -8,6 +8,9 @@ export const COLORS = {
   blue: '#0E008D',
   redbtn: 'rgba(179, 28, 28, 0.7)',
   wrongRed: '#D32F2F',
+  axiantBlue: '#1A2C38',
+  axiantBlueOpacity: 'rgba(26, 44, 56, 0.8)',
+  axiantBlueOpacitySelected: '#2A3D49',
 
   darkGrey: '#171717',
   black: '#000',
@@ -20,4 +23,5 @@ export const COLORS = {
 
   blueGradient: ['#20314f', '#133a7d'],
   redGradient: ['#850C0C', '#960505'],
+  axiantGradient: ['#1A2C38', '#1A2C38'],
 };

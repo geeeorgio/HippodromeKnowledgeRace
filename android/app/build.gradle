@@ -79,7 +79,7 @@ android {
 
     namespace "com.hippodromeknowledgerace"
     defaultConfig {
-        applicationId "com.windayhippodrome"
+        applicationId "com.axiantstakestory"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

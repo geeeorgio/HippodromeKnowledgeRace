@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(12),
-    backgroundColor: COLORS.redbtn,
+    backgroundColor: COLORS.axiantBlue,
     borderWidth: wp(1),
   },
   white: { borderColor: COLORS.white },
